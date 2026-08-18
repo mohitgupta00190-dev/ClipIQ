@@ -1,8 +1,8 @@
-# Zips / build artifacts (served from the demo but too big to version well)
-demo/*.zip
+# Vercel deployment artifacts
+.vercel
 
-# Stray downloaded competitor package
-Clipboard-Manager-and-Text-Expander-Clipboard-History-Pro-Chrome-Web-Store (2).zip
+# Dependencies
+node_modules/
 
 # Playwright test artifacts
 .playwright-mcp/
@@ -10,3 +10,8 @@ Clipboard-Manager-and-Text-Expander-Clipboard-History-Pro-Chrome-Web-Store (2).z
 
 # Local-only state
 .tmp/
+.claude/
+
+# Local zips regenerated on demand (clipiq.zip is shipped deliberately)
+clipiq-store-listing.zip
+Clipboard-Manager-and-Text-Expander-Clipboard-History-Pro-Chrome-Web-Store (2).zip

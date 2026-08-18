@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClipIQ — Privacy Policy</title>
+<style>
+  :root { --purple:#6C5CE7; --gold:#B8860B; --ink:#2d2644; --bg:#faf9ff; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; color:var(--ink); background:var(--bg); }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 40px 22px 80px; }
+  header { border-bottom: 3px solid var(--purple); padding-bottom: 18px; margin-bottom: 26px; }
+  h1 { margin:0 0 6px; font-size: 30px; }
+  h1 b { color: var(--purple); }
+  .sub { color:#6b6482; font-size: 14px; }
+  h2 { font-size: 19px; margin: 30px 0 8px; color:#241d40; }
+  p, li { color:#3c3557; }
+  .card { background:#fff; border:1px solid #e6e2f5; border-radius:12px; padding:16px 20px; margin:14px 0; }
+  .card.local { border-left:4px solid var(--purple); }
+  .card.ai { border-left:4px solid var(--gold); }
+  .tag { display:inline-block; font-size:12px; font-weight:700; letter-spacing:.4px; padding:2px 10px; border-radius:99px; }
+  .tag.local { background:#ece8ff; color:#5346c9; }
+  .tag.ai { background:#fff3d6; color:#8a6408; }
+  a { color: var(--purple); }
+  footer { margin-top:44px; padding-top:16px; border-top:1px solid #e6e2f5; font-size:13px; color:#7a7396; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Clip<b>IQ</b> — Privacy Policy</h1>
+    <div class="sub">Effective date: August 18, 2026 &nbsp;·&nbsp; Applies to the ClipIQ — Smart Clipboard History Chrome extension</div>
+  </header>
+
+  <p><strong>Short version:</strong> ClipIQ is local-first. Your clipboard history is stored on your device and never leaves it in normal use. Only two optional, clearly-labeled features ever transmit text off your device: the opt-in AI features (Pro) and the opt-in Mellowtel support layer. Both are off until you explicitly turn them on, and both can be turned off at any time.</p>
+
+  <div class="card local"><span class="tag local">DEFAULT — ALWAYS LOCAL</span>
+    <h2 style="margin-top:10px">What ClipIQ stores</h2>
+    <ul>
+      <li><strong>Clipboard clips you copy</strong> — stored locally in the browser's extension storage on your device.</li>
+      <li><strong>Your settings</strong> — favorites, trash, ignore rules, theme.</li>
+      <li><strong>The site origin of each clip</strong> (e.g. <code>github.com</code>) so clips can show their source — only the origin, not the page contents.</li>
+    </ul>
+    <p>No account, no sign-up, no email, no analytics. Uninstalling the extension deletes all local data.</p>
+  </div>
+
+  <h2>What ClipIQ does NOT do</h2>
+  <ul>
+    <li>Does <strong>not</strong> sell or transfer your data to third parties.</li>
+    <li>Does <strong>not</strong> track your browsing or keep a history of pages you visit.</li>
+    <li>Does <strong>not</strong> collect keystrokes, clicks, or mouse movements.</li>
+    <li>Does <strong>not</strong> read page contents — it only reacts to <em>copy</em> events on the text you yourself select and copy.</li>
+    <li>Does <strong>not</strong> require any personal information.</li>
+    <li>Does <strong>not</strong> work in Incognito unless you explicitly allow it.</li>
+  </ul>
+
+  <div class="card ai"><span class="tag ai">OPT-IN ONLY — PRO</span>
+    <h2 style="margin-top:10px">AI features (Pro)</h2>
+    <p>AI search, AI chat and AI labels are optional Pro features, disabled until you unlock them. When you use an AI feature, ClipIQ sends <strong>the minimum text needed to answer you</strong> — your search query or chat message, plus the clips relevant to that request — to our AI processing service over an encrypted connection, purely to generate your answer. That text is used only to serve your request and is not sold, shared, or used for advertising. Sensitive-looking clips (passwords, card numbers, API keys) are detected locally and never sent to AI.</p>
+    <p>Content you copy can include personal or private text; only clips you explicitly involve in an AI action are transmitted. If you never unlock or use AI features, nothing you copy ever leaves your device.</p>
+  </div>
+
+  <div class="card ai"><span class="tag ai">OPT-IN ONLY — PRO</span>
+    <h2 style="margin-top:10px">Mellowtel support layer</h2>
+    <p>Unlocking Pro includes a consent-based support layer provided by Mellowtel. With your explicit opt-in, it shares a small slice of unused bandwidth (not your data or browsing) to support the extension. You can opt out at any time from the Pro settings link — all Pro features and the support layer turn off together.</p>
+  </div>
+
+  <h2>Permissions</h2>
+  <ul>
+    <li><strong>Clipboard read/write</strong> — the core function: capture copies and re-paste saved clips.</li>
+    <li><strong>Storage</strong> — save your local history and settings.</li>
+    <li><strong>Host access on all sites</strong> — copies can happen on any website; the content script listens only for copy/paste events. It does not read or alter page content.</li>
+    <li><strong>Alarms</strong> — a clipboard polling fallback and the Pro status check.</li>
+    <li><strong>Context menu / scripting</strong> — a right-click "Search ClipIQ" entry that opens the popup.</li>
+  </ul>
+
+  <h2>Your control</h2>
+  <ul>
+    <li>Remove any clip, empty the trash, or export/delete everything at any time.</li>
+    <li>Turn AI off (or never turn it on) — your history stays 100% local.</li>
+    <li>Opt out of Pro support at any time; all Pro features disable immediately.</li>
+    <li>Uninstall to erase every trace of ClipIQ from your device.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: use the support link on the extension's Chrome Web Store page.</p>
+
+  <footer>
+    ClipIQ — Smart Clipboard History · Chrome extension v1.4.0 · This policy covers the extension and its optional Pro features only.
+  </footer>
+</div>
+</body>
+</html>
