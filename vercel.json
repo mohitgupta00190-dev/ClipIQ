@@ -1,14 +1,12 @@
 {
   "version": 2,
-  "public": true,
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
     { "source": "/clipiq", "destination": "/" },
     { "source": "/clipiq/", "destination": "/" },
     { "source": "/demo", "destination": "/" },
-    { "source": "/demo/", "destination": "/" },
-    { "source": "/privacy", "destination": "/privacy" }
+    { "source": "/demo/", "destination": "/" }
   ],
   "headers": [
     {
