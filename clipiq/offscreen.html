@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head><meta charset="utf-8" /></head>
+  <body>
+    <!--
+      Offscreen clipboard reader.
+      A textarea is present so the document can host a selection; reading is
+      attempted via navigator.clipboard.readText(). On setups where the
+      offscreen document is allowed to read (permission granted to the
+      extension), this works without focus. Where it doesn't, the content
+      script's copy-event capture is the primary path.
+    -->
+    <textarea id="t" aria-hidden="true" tabindex="-1"></textarea>
+    <script src="js/offscreen.js"></script>
+  </body>
+</html>

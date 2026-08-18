@@ -1,0 +1,38 @@
+/* ClipIQ options */
+body.options { width: 100%; max-width: 720px; margin: 0 auto; height: auto; }
+body.options #app, body.options .wrap { display: block; }
+body.options { background: var(--bg); padding: 24px 16px 60px; }
+.ohead { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+.ohead .brand { font-size: 20px; font-weight: 800; color: var(--accent); display: flex; gap: 8px; align-items: center; }
+.ver { font-size: 12px; color: var(--muted); }
+.card-sec {
+  background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
+  padding: 16px 18px; margin-bottom: 16px; box-shadow: var(--shadow);
+}
+.card-sec h2 { font-size: 15px; margin-bottom: 4px; }
+.sub { font-size: 12.5px; color: var(--muted); margin-bottom: 12px; }
+.row { display: flex; gap: 10px; align-items: center; margin: 10px 0; flex-wrap: wrap; }
+.row > span:first-child { min-width: 130px; font-size: 13px; }
+.row input[type="text"], .row input[type="password"], .row input[type="number"], .row select, .row textarea {
+  padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--card); color: var(--text); font-size: 13px; outline: none;
+}
+.row input:focus, .row select:focus, .row textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+#nvKey { flex: 1; min-width: 220px; font-family: var(--mono); font-size: 12px; }
+#snipTrigger { width: 120px; font-family: var(--mono); }
+#snipText { flex: 1; min-width: 200px; }
+#blocked { width: 100%; font-family: var(--mono); font-size: 12.5px; padding: 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); color: var(--text); }
+.addrow { border-top: 1px dashed var(--border); padding-top: 12px; }
+.snip-row { display: flex; gap: 8px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--border); }
+.snip-row .trig { font-family: var(--mono); color: var(--accent); font-weight: 600; min-width: 110px; }
+.snip-row .txt { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
+.snip-row .del { border: none; background: none; color: var(--muted); cursor: pointer; font-size: 14px; }
+.snip-row .del:hover { color: #e95a74; }
+.chain { margin: 0; padding-left: 18px; font-size: 12.5px; color: var(--text); }
+.chain li { margin: 3px 0; }
+.chain .m { font-family: var(--mono); color: var(--accent); }
+.chain .n { color: var(--muted); font-size: 11.5px; }
+.btn.danger { border-color: #e95a74; color: #e95a74; }
+.btn.danger:hover { background: rgba(233, 90, 116, 0.1); }
+.muted { color: var(--muted); font-size: 12px; }
+kbd, code { background: var(--code-bg); border-radius: 4px; padding: 1px 5px; font-family: var(--mono); font-size: 11.5px; }

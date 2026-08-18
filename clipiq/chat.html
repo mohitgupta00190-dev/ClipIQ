@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ClipIQ AI Chat</title>
+    <script>
+      // web-demo auto-detection: when this page is served by the demo server
+      // (not from the extension bundle) route AI through the /api/ai passthrough
+      // and enable demo-mode behaviors (storage-based Pro, support link).
+      if (location.protocol.startsWith("http") && !location.href.startsWith("chrome")) {
+        window.isWebDemo = true;
+      }
+    </script>
+    <link rel="stylesheet" href="css/popup.css" />
+    <link rel="stylesheet" href="css/chat.css" />
+  </head>
+  <body class="chat-body">
+    <div id="app" class="chat-app">
+      <header class="chat-top">
+        <div class="brand gold">✨ ClipIQ AI Chat</div>
+        <span id="chatBadge" class="chat-badge">Pro</span>
+      </header>
+
+      <div id="gate" class="gate" hidden>
+        <div class="gate-art">👑</div>
+        <h2>ClipIQ Pro required</h2>
+        <p class="gate-sub">AI Chat is a Pro feature. Unlock all Pro features free by supporting ClipIQ — share a slice of your unused bandwidth, with your consent. Opt out any time.</p>
+        <ul class="gate-list" id="gateList"></ul>
+        <button id="gateBtn" class="btn primary gold-btn">Unlock Pro — it's free</button>
+      </div>
+
+      <div id="chatMain" class="chat-main" hidden>
+        <div id="msgs" class="msgs">
+          <div class="msg ai">
+            <div class="bubble">Hi! I'm ClipIQ AI. Ask me about anything you've copied — I can find clips, summarize, or transform them.</div>
+          </div>
+        </div>
+        <div class="chat-inputwrap">
+          <textarea id="chatInput" rows="1" placeholder="Ask about your clips…" autocomplete="off"></textarea>
+          <button id="chatSend" class="btn primary gold-btn" title="Send">➤</button>
+        </div>
+        <div class="chat-hint">Enter send · Shift+Enter newline · clip text included as context</div>
+      </div>
+    </div>
+    <script src="js/detect.js"></script>
+    <script src="js/pro.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/chat.js"></script>
+  </body>
+</html>

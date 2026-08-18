@@ -1,0 +1,12 @@
+# Zips / build artifacts (served from the demo but too big to version well)
+demo/*.zip
+
+# Stray downloaded competitor package
+Clipboard-Manager-and-Text-Expander-Clipboard-History-Pro-Chrome-Web-Store (2).zip
+
+# Playwright test artifacts
+.playwright-mcp/
+*.png.playwright*
+
+# Local-only state
+.tmp/

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ClipIQ — Smart Clipboard History for Chrome</title>
+<link rel="icon" type="image/png" href="clipiq/icons/128.png" />
+<style>
+  :root {
+    --accent: #6c5ce7; --accent-soft: rgba(108,92,231,.12);
+    --bg: #fafafc; --panel: #fff; --border: #e8e7ef; --text: #26243a; --muted: #7a7794;
+  }
+  [data-theme="dark"] { --bg:#16151d; --panel:#1d1c27; --border:#312f42; --text:#eceaf6; --muted:#9c98b8; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font: 15px/1.6 -apple-system,"Segoe UI",Roboto,Ubuntu,sans-serif; background: var(--bg); color: var(--text); }
+  .hero { text-align: center; padding: 48px 20px 30px; max-width: 760px; margin: 0 auto; }
+  .hero img { width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 8px 30px rgba(108,92,231,.35); }
+  .hero h1 { font-size: 30px; margin: 14px 0 8px; letter-spacing: -.5px; }
+  .hero p { color: var(--muted); max-width: 520px; margin: 0 auto 18px; }
+  .cta { display: inline-flex; gap: 10px; align-items: center; }
+  .cta a.btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; padding: 11px 22px; border-radius: 12px; box-shadow: 0 6px 20px rgba(108,92,231,.35); }
+  .cta a.btn:hover { filter: brightness(1.07); }
+  .cta .kbd { font-size: 12.5px; color: var(--muted); }
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; max-width: 860px; margin: 26px auto 0; padding: 0 20px; }
+  .feat { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+  .feat b { display: block; margin-bottom: 3px; }
+  .feat span { font-size: 13px; color: var(--muted); }
+  .try { text-align: center; margin: 40px 0 8px; }
+  .try h2 { font-size: 20px; margin-bottom: 4px; }
+  .try p { color: var(--muted); font-size: 13.5px; }
+  #popupMount { display: flex; justify-content: center; padding: 18px 0 60px; }
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 18px; border-top: 1px solid var(--border); }
+  .note { max-width: 640px; margin: 0 auto 8px; text-align: center; font-size: 12.5px; color: var(--muted); }
+  .ai-note { background: var(--accent-soft); border-radius: 8px; padding: 8px 12px; display: inline-block; }
+</style>
+</head>
+<body>
+  <div class="hero">
+    <img src="clipiq/icons/128.png" alt="ClipIQ logo" />
+    <h1>ClipIQ</h1>
+    <p>Copy anything, find it instantly. Clipboard history with smart cards, snippets, private clips and AI-powered search — all stored locally in your browser.</p>
+    <div class="cta">
+      <a class="btn" href="clipiq.zip" download="clipiq-extension.zip">⬇ Download extension (zip)</a>
+      <span class="kbd">then: chrome://extensions → Developer mode → Load unpacked</span>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feat"><b>⚡ Auto-capture</b><span>Everything you copy lands in your history. No save button.</span></div>
+    <div class="feat"><b>🔎 Instant search</b><span>Fuzzy search-as-you-type over everything you've copied.</span></div>
+    <div class="feat"><b>🧠 Smart cards</b><span>Links, colors, emails and code render as beautiful cards.</span></div>
+    <div class="feat"><b>✨ AI search</b><span>"the curl command with the key" — AI finds it in plain English.</span></div>
+    <div class="feat"><b>🔒 Private clips</b><span>Sensitive clips burn after pasting. Never linger in history.</span></div>
+    <div class="feat"><b>⚡ Snippets</b><span>Type <code>;addr</code> + space anywhere to expand your address.</span></div>
+  </div>
+
+  <div class="try">
+    <h2>Try the popup right here</h2>
+    <p>Fully interactive demo with sample clips — search, pin, private mode, delete, AI.</p>
+    <p class="note"><span class="ai-note">✨ AI search is a Pro feature — unlock it below, no API keys, no accounts, no setup</span></p>
+  </div>
+
+  <div id="popupMount"></div>
+
+  <div id="support" class="features" style="margin-top: 10px; max-width: 640px;">
+    <div class="feat">
+      <b>✨ ClipIQ Pro (free)</b>
+      <span>AI Chat, AI Search &amp; AI Labels. Unlock by sharing a slice of your unused bandwidth — with your explicit consent. Opt out any time; Pro features instantly switch off and the icon returns to normal.</span>
+      <p style="margin-top:10px;"><a href="/clipiq/chat.html" target="_blank" style="color: var(--accent); font-weight:700;">Open the premium AI Chat window →</a></p>
+      <p style="margin-top:10px;"><button id="supportToggle" class="btn" style="background: var(--accent); color:#fff; border:none; padding:8px 14px; border-radius:10px; font-weight:700; cursor:pointer;">Unlock Pro features</button></p>
+    </div>
+  </div>
+
+  <footer>ClipIQ v1.4 — local-first clipboard history · no accounts · no cloud</footer>
+
+  <script>
+    // support/pro opt-in simulation for the web demo
+    const st = document.getElementById("supportToggle");
+    function paintSupport() {
+      const on = localStorage.getItem("clipiq:support") === "1";
+      st.textContent = on ? "✓ Pro unlocked — thank you!" : "Unlock Pro features";
+      st.style.background = on ? "#2ecc71" : "var(--accent)";
+    }
+    st.addEventListener("click", () => {
+      const on = localStorage.getItem("clipiq:support") === "1";
+      localStorage.setItem("clipiq:support", on ? "0" : "1");
+      paintSupport();
+      location.reload();
+    });
+    paintSupport();
+  </script>
+
+  <script>
+    // Load the real popup into the mount point in web-demo mode.
+    window.isWebDemo = true;
+    fetch("clipiq/popup.html")
+      .then((r) => r.text())
+      .then((html) => {
+        const mount = document.getElementById("popupMount");
+        const doc = new DOMParser().parseFromString(html, "text/html");
+        // rewrite ALL stylesheet links to the /clipiq/ prefix (handles both
+        // root-relative "/css/x.css" and popup-relative "css/x.css" forms)
+        doc.querySelectorAll("link[rel=stylesheet]").forEach((l) => {
+          const href = (l.getAttribute("href") || "").replace(/^\/+/, "");
+          if (href) l.setAttribute("href", "clipiq/" + href);
+          document.head.appendChild(l);
+        });
+        const app = doc.body.firstElementChild;
+        app.classList.add("web-demo-shell");
+        mount.appendChild(app);
+        // execute popup scripts in order
+        const load = (src) => new Promise((res, rej) => {
+          const s = document.createElement("script");
+          s.src = src; s.onload = res; s.onerror = rej;
+          document.body.appendChild(s);
+        });
+        (async () => {
+          await load("clipiq/js/detect.js");
+          await load("clipiq/js/pro.js");
+          await load("clipiq/js/ai.js");
+          await load("clipiq/js/popup.js");
+        })();
+      })
+      .catch((e) => console.error("demo load failed", e));
+  </script>
+</body>
+</html>

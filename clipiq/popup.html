@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ClipIQ</title>
+    <link rel="stylesheet" href="css/popup.css" />
+    <link rel="stylesheet" href="css/ai-extra.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="top">
+        <div class="brand">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="16" rx="4" stroke="currentColor" stroke-width="2"/>
+            <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>ClipIQ</span>
+          <span id="proTag" class="pro-tag" hidden>PRO</span>
+        </div>
+        <div class="top-actions">
+          <button id="btnAi" class="chip-btn" title="Ask AI to find a clip">✨ Ask AI</button>
+          <button id="btnPrivate" class="chip-btn" title="Show private clips">🔒 <span id="privateCount">0</span></button>
+          <button id="btnSettings" class="chip-btn icon-only" title="Settings">⚙</button>
+        </div>
+      </header>
+
+      <div id="proBanner" class="pro-banner" hidden>
+        <div class="pb-head">
+          <b>👑 ClipIQ Pro</b>
+          <button id="pbClose" class="pb-close" title="Hide for now">✕</button>
+        </div>
+        <ul id="pbFeats" class="pb-feats"></ul>
+        <div class="pb-actions">
+          <button id="pbGo" class="btn primary gold-btn">Unlock all Pro features — free</button>
+        </div>
+        <p class="pb-fine">Unlock by supporting ClipIQ: share a slice of unused bandwidth, with your consent. Opt out any time. No ads. No data sold.</p>
+      </div>
+
+      <div id="proActive" class="pro-active" hidden>
+        <span>👑 <b>Pro active</b> — AI Chat · AI Search · AI Labels · Gold icon</span>
+      </div>
+
+      <div class="searchwrap">
+        <svg class="search-ic" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+          <path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <input id="q" type="text" placeholder="Search your clipboard…" autocomplete="off" spellcheck="false" />
+        <button id="btnClear" class="clear" title="Clear">✕</button>
+      </div>
+
+      <div id="aiPanel" class="ai-panel" hidden>
+        <div class="ai-head">
+          <span class="ai-title">✨ AI search</span>
+          <span id="aiModel" class="ai-model"></span>
+        </div>
+        <div class="ai-body">
+          <div id="aiAnswer" class="ai-answer">Describe what you're looking for — "the curl command with the API key", "john's email"…</div>
+        </div>
+        <div class="ai-actions">
+          <button id="aiInsert" class="btn primary" hidden>Insert clip</button>
+          <button id="aiClose" class="btn ghost">Close</button>
+        </div>
+      </div>
+
+      <div id="proUnlock" class="ai-panel pro-unlock" hidden>
+        <div class="ai-head">
+          <span class="ai-title">✨ ClipIQ Pro</span>
+        </div>
+        <div class="ai-body">
+          <p id="proText" class="ai-answer">Unlock AI-powered clipboard search by supporting ClipIQ: share a slice of your unused internet bandwidth (with your explicit consent). No ads. No data sold. Opt out any time.</p>
+        </div>
+        <div class="ai-actions">
+          <button id="proGo" class="btn primary">Support ClipIQ &amp; unlock</button>
+          <button id="proClose" class="btn ghost">Not now</button>
+        </div>
+      </div>
+
+      <div id="list" class="list" role="listbox" aria-label="Clipboard history"></div>
+      <div id="empty" class="empty" hidden>
+        <div class="empty-art">📋</div>
+        <div class="empty-title">Nothing here yet</div>
+        <div class="empty-sub">Copy something and it lands here automatically.</div>
+      </div>
+
+      <footer class="foot">
+        <span id="count" class="count">0 clips</span>
+        <span class="hint">↑↓ navigate · Enter paste · Ctrl+Enter ask AI</span>
+      </footer>
+    </div>
+
+    <script src="js/detect.js"></script>
+    <script src="js/pro.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/popup.js"></script>
+  </body>
+</html>

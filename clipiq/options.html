@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ClipIQ Settings</title>
+    <link rel="stylesheet" href="css/popup.css" />
+    <link rel="stylesheet" href="css/options.css" />
+  </head>
+  <body class="options">
+    <div class="wrap">
+      <header class="ohead">
+        <span class="brand">ClipIQ Settings</span>
+        <span class="ver">v1.0</span>
+      </header>
+
+      <section class="card-sec">
+        <h2>⚡ Snippets</h2>
+        <p class="sub">Type <code>;trigger</code> + <kbd>Space</kbd> in any text field to expand. Triggers must start with <code>;</code></p>
+        <div id="snipRows"></div>
+        <div class="row addrow">
+          <input id="snipTrigger" type="text" placeholder=";addr" maxlength="32" />
+          <input id="snipText" type="text" placeholder="12B Baker Street, London" />
+          <button id="snipAdd" class="btn primary" type="button">Add</button>
+        </div>
+      </section>
+
+      <section class="card-sec">
+        <h2>🚫 Blocked sites</h2>
+        <p class="sub">Copies made on these sites are never saved. One domain per line (e.g. <code>bank.com</code> also blocks <code>secure.bank.com</code>).</p>
+        <textarea id="blocked" rows="4" spellcheck="false" placeholder="bank.com&#10;password-manager.example"></textarea>
+      </section>
+
+      <section class="card-sec">
+        <h2>🎨 Appearance &amp; storage</h2>
+        <label class="row">
+          <span>Theme</span>
+          <select id="theme">
+            <option value="system">Follow system</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </label>
+        <label class="row">
+          <span>Keep last</span>
+          <input id="maxClips" type="number" min="50" max="2000" step="50" />
+          <span>clips</span>
+        </label>
+        <div class="row">
+          <span>History</span>
+          <button id="clearAll" class="btn danger" type="button">Delete all clips</button>
+          <span id="clipCount" class="muted"></span>
+        </div>
+        <div class="row">
+          <span>Export / Import</span>
+          <button id="exportBtn" class="btn" type="button">Export JSON</button>
+          <label class="btn" for="importFile">Import JSON<input id="importFile" type="file" accept="application/json" hidden /></label>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/detect.js"></script>
+    <script src="js/options.js"></script>
+  </body>
+</html>

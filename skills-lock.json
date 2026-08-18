@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "mellowtel-integration": {
+      "source": "mellowtel-inc/mellowtel-integration",
+      "sourceType": "github",
+      "skillPath": "mellowtel-integration/SKILL.md",
+      "computedHash": "ea8e8c30e88ac164aaf68c47fe7fcb8b0842c883e72e6d229941e836ea447867"
+    }
+  }
+}
