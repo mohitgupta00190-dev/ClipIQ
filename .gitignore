@@ -15,3 +15,6 @@ node_modules/
 # Local zips regenerated on demand (clipiq.zip is shipped deliberately)
 clipiq-store-listing.zip
 Clipboard-Manager-and-Text-Expander-Clipboard-History-Pro-Chrome-Web-Store (2).zip
+
+# workspace tooling lockfile
+skills-lock.json
