@@ -63,8 +63,8 @@ English
 - promo-marquee-1400x560.png — Marquee promo tile
 
 ## Additional fields
-- Homepage URL: https://index-heading-page-iy7sbr.drytis.dev/
-- Support URL: https://index-heading-page-iy7sbr.drytis.dev/
+- Homepage URL: https://mohitgupta00190-dev.github.io/ClipIQ/
+- Support URL: https://mohitgupta00190-dev.github.io/ClipIQ/
 - (Official URL: register your own domain via Search Console when you have one)
 
 ## Privacy notes for the review (single-permission rationale)

@@ -1,8 +1,8 @@
 # Chrome Web Store — Privacy tab answers (copy-paste values)
 
 Live URLs:
-- Privacy policy: https://index-heading-page-iy7sbr.drytis.dev/privacy.html
-- Demo/homepage: https://index-heading-page-iy7sbr.drytis.dev/
+- Privacy policy: https://mohitgupta00190-dev.github.io/ClipIQ/privacy.html
+- Demo/homepage: https://mohitgupta00190-dev.github.io/ClipIQ/
 
 ---
 
@@ -62,7 +62,7 @@ Live URLs:
 (432 chars)
 
 **Host permission (<all_urls>)**
-> Two uses, both scoped to the single purpose: (1) a content script listens for copy/paste events on every site so captures work anywhere the user copies text — it reads only text the user themselves selects and copies, never page contents; (2) the optional Mellowtel support layer (opt-in, off by default) needs host access for its consensual bandwidth-sharing sessions. Pasting saved clips back uses the narrower activeTab permission instead. ClipIQ never collects browsing history or page content, and its privacy policy (https://index-heading-page-iy7sbr.drytis.dev/privacy.html) documents this in full.
+> Two uses, both scoped to the single purpose: (1) a content script listens for copy/paste events on every site so captures work anywhere the user copies text — it reads only text the user themselves selects and copies, never page contents; (2) the optional Mellowtel support layer (opt-in, off by default) needs host access for its consensual bandwidth-sharing sessions. Pasting saved clips back uses the narrower activeTab permission instead. ClipIQ never collects browsing history or page content, and its privacy policy (https://mohitgupta00190-dev.github.io/ClipIQ/privacy.html) documents this in full.
 
 (636 chars)
 
@@ -105,6 +105,6 @@ Rationale if asked: the "user activity" disclosure covers the optional Mellowtel
 
 ## Privacy policy URL
 
-> https://index-heading-page-iy7sbr.drytis.dev/privacy.html
+> https://mohitgupta00190-dev.github.io/ClipIQ/privacy.html
 
 (Live, 200 OK — hosted on the same domain as the extension's homepage/demo.)
